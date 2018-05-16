@@ -9,7 +9,7 @@ class Driver {
     this.id = ++driverId
     this.name = name
 
-    store.drivers.push(self)
+    store.drivers.push(this)
   }
 
   passengers() {
