@@ -33,7 +33,7 @@ class Passenger {
   }
 
   trips() {
-    return store.trips.filter(trip: {
+    return store.trips.filter(trip => {
       return trip.passengerId === this.id
     })
   }
