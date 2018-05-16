@@ -54,13 +54,13 @@ class Trip {
   }
 
   driver() {
-    return store.drivers.find(driver: {
+    return store.drivers.find(driver => {
       return trip.driverId === this.id
     })
   }
 
   passenger() {
-    return store.passengers.filter(passenger: {
+    return store.passengers.filter(passenger => {
       return passenger.driverId === this.id
     })
   }
