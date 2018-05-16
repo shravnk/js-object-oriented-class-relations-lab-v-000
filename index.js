@@ -31,6 +31,12 @@ class Passenger {
     this.name = name
     store.passengers.push(self)
   }
+
+  trips() {
+    return store.trips.filter(trip: {
+      return trip.passengerId === this.id
+    })
+  }
 }
 
 class Trip {
