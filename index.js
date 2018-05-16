@@ -12,17 +12,18 @@ class Driver {
     store.drivers.push(this)
   }
 
-  passengers() {
-    return store.passengers.filter(passenger => {
-      return passenger.driverId === this.id
-    })
-  }
-
   trips() {
     return store.trips.filter(trip => {
       return trip.driverId === this.id
     })
   }
+
+  passengers() {
+    return self.trips().map(trip => {
+      return trip.passenger()
+    })
+  }
+
 }
 
 class Passenger {
@@ -42,7 +43,7 @@ class Passenger {
       return trip.driver()
     })
   }
-  
+
   // drivers() {
   //   return store.drivers.filter(driver => {
   //     return driver.passengerId === this.id
