@@ -37,12 +37,17 @@ class Passenger {
       return trip.passengerId === this.id
     })
   }
-
   drivers() {
-    return store.drivers.filter(driver => {
-      return driver.passengerId === this.id
+    return this.trips().map(function(trip) {
+      return trip.driver()
     })
   }
+  
+  // drivers() {
+  //   return store.drivers.filter(driver => {
+  //     return driver.passengerId === this.id
+  //   })
+  // }
 }
 
 class Trip {
